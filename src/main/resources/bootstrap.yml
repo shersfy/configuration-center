@@ -14,8 +14,14 @@ spring:
     bus:
       enabled: true
 # MQ
-  kafka:
-    bootstrap-servers: zknode1:9092,zknode2:9092,zknode3:9092
+#  kafka:
+#    bootstrap-servers: zknode1:9092,zknode2:9092,zknode3:9092
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /datahub_vhost
+    username: admin
+    password: admin123
 # thymeleaf
   thymeleaf:
     cache: false
@@ -43,6 +49,7 @@ eureka:
   instance:
     prefer-ip-address: true
   client:
+    enabled: false
     service-url:
       defaultZone: http://localhost:8761/eureka/
 # logging
